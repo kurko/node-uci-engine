@@ -22,7 +22,7 @@ class Parser {
     }
     static parsePrincipalVariations(output, candidates = {}) {
         candidates = Object.assign({}, candidates);
-        const regex = /info.*\sdepth\s([0-9]+).*multipv\s([0-9]+).*score\s(.*)\s([0-9]+).*nodes.*time\s([0-9]+).*pv\s([a-h1-8\s]+)$/;
+        const regex = /info.*\sdepth\s([0-9]+).*multipv\s([0-9]+).*score\s(.*)\s(-?[0-9]+).*nodes.*time\s([0-9]+).*pv\s([a-h1-8\s]+)$/;
         const matches = output.trim().match(regex);
         if (matches !== null) {
             let depth = parseInt(matches[1]);
